@@ -16,7 +16,6 @@
 package com.skplayer
 
 import android.app.Application
-import com.skplayer.BuildConfig
 import com.skplayer.core.di.ApplicationComponent
 import com.skplayer.core.di.ApplicationModule
 import com.skplayer.core.di.DaggerApplicationComponent
@@ -34,12 +33,12 @@ class AndroidApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         this.injectMembers()
-        this.initializeLeakDetection()
+//        this.initializeLeakDetection()
     }
 
     private fun injectMembers() = appComponent.inject(this)
 
     private fun initializeLeakDetection() {
-        if (BuildConfig.DEBUG) LeakCanary.install(this)
+//        if (BuildConfig.DEBUG) LeakCanary.install(this)
     }
 }
